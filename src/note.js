@@ -13,6 +13,7 @@ class Note extends Component {
     this.remove = this.remove.bind(this)
     this.renderForm = this.renderForm.bind(this)
     this.renderDisplay = this.renderDisplay.bind(this)
+    this.save = this.save.bind(this)
   }
   edit() {
     this.setState({
@@ -24,12 +25,16 @@ class Note extends Component {
     alert('Removing Note')
   }
 
+  save() {
+    alert('Saved!')
+  }
+
   renderForm(){
     return (
       <div className="note">
         <form>
           <textarea />
-          <button><FaFloppyO /></button>
+          <button onClick={this.save}><FaFloppyO /></button>
         </form>
       </div>
     )
@@ -48,11 +53,13 @@ class Note extends Component {
   }
 
   render() {
-    if(this.state.editing) {
-      return this.renderForm()
-    } else {
-      return this.renderDisplay()
-    }
+    return this.state.editing ? this.renderForm() : this.renderDisplay()
+
+    // if(this.state.editing) {
+    //   return this.renderForm()
+    // } else {
+    //   return this.renderDisplay()
+    // }
   }
 }
 
