@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import FaPencil from 'react-icons/lib/fa/pencil'
 import FaTrash from 'react-icons/lib/fa/trash'
 import FaFloppyO from 'react-icons/lib/fa/floppy-o'
+import Draggable from 'react-draggable'
 
 class Note extends Component {
   constructor(props) {
@@ -76,13 +77,15 @@ class Note extends Component {
 
   renderDisplay() {
     return (
-      <div className="note" style={this.style}>
-        <p>{this.props.children}</p>
-        <span>
-          <button onClick={this.edit} id="edit"><FaPencil /></button>
-          <button onClick={this.remove} id="remove"><FaTrash /></button>
-        </span>
-      </div>
+      <Draggable>
+        {<div className="note" style={this.style}>
+          <p>{this.props.children}</p>
+          <span>
+            <button onClick={this.edit} id="edit"><FaPencil /></button>
+            <button onClick={this.remove} id="remove"><FaTrash /></button>
+          </span>
+        </div>}
+      </Draggable>
     )
   }
 
