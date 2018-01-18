@@ -65,13 +65,15 @@ class Note extends Component {
 
   renderForm(){
     return (
-      <div className="note" style={this.style}>
-        <form onSubmit={this.save}>
-          <textarea ref={ input => this._newText = input }
-                    defaultValue={this.props.children}/>
-          <button id="save"><FaFloppyO /></button>
-        </form>
-      </div>
+      <Draggable>
+        {<div className="note" style={this.style}>
+          <form onSubmit={this.save}>
+            <textarea ref={ input => this._newText = input }
+                      defaultValue={this.props.children}/>
+            <button id="save"><FaFloppyO /></button>
+          </form>
+        </div>}
+      </Draggable>
     )
   }
 

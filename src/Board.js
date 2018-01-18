@@ -7,18 +7,18 @@ class Board extends Component {
     super(props)
     this.state = {
       notes: [
-        // {
-        //   id: 0,
-        //   note: "Oh, hello there!"
-        // },
-        // {
-        //   id: 1,
-        //   note: "Thanks for visiting :)"
-        // },
-        // {
-        //   id: 2,
-        //   note: "Please, play around!"
-        // }
+        {
+          id: 5,
+          note: "Oh, hello there!"
+        },
+        {
+          id: 6,
+          note: "Thanks for visiting :)"
+        },
+        {
+          id: 7,
+          note: "Please, play around!"
+        }
       ]
     }
     this.add = this.add.bind(this)
