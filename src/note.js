@@ -70,7 +70,7 @@ class Note extends Component {
           <form onSubmit={this.save}>
             <textarea ref={ input => this._newText = input }
                       defaultValue={this.props.children}/>
-            <button id="save"><FaFloppyO /></button>
+            <button id="save" title="Save"><FaFloppyO /></button>
           </form>
         </div>}
       </Draggable>
@@ -83,8 +83,8 @@ class Note extends Component {
         {<div className="note" style={this.style}>
           <p className="note-text">{this.props.children}</p>
           <span>
-            <button onClick={this.edit} id="edit"><FaPencil /></button>
-            <button onClick={this.remove} id="remove"><FaTrash /></button>
+            <button onClick={this.edit} id="edit" title="Edit"><FaPencil /></button>
+            <button onClick={this.remove} id="remove" title="Remove"><FaTrash /></button>
           </span>
         </div>}
       </Draggable>
