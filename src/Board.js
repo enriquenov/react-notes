@@ -8,15 +8,15 @@ class Board extends Component {
     this.state = {
       notes: [
         {
-          id: 5,
+          id: 0,
           note: "Oh, hello there!"
         },
         {
-          id: 6,
+          id: 1,
           note: "Thanks for visiting :)"
         },
         {
-          id: 7,
+          id: 2,
           note: "Please, play around!"
         }
       ]
@@ -28,16 +28,16 @@ class Board extends Component {
     this.remove = this.remove.bind(this)
   }
 
-  componentWillMount() {
-    var self = this
-    if (this.props.count) {
-      fetch(`https://baconipsum.com/api/?type=all-meat&sentences=${this.props.count}`)
-      .then(response => response.json())
-      .then(json => json[0]
-        .split('. ')
-        .forEach(sentence => self.add(sentence.substring(0, 25))))
-    }
-  }
+  // componentWillMount() {
+  //   var self = this
+  //   if (this.props.count) {
+  //     fetch(`https://baconipsum.com/api/?type=all-meat&sentences=${this.props.count}`)
+  //     .then(response => response.json())
+  //     .then(json => json[0]
+  //       .split('. ')
+  //       .forEach(sentence => self.add(sentence.substring(0, 25))))
+  //   }
+  // }
 
   add(text) {
     this.setState(prevState => ({
@@ -77,7 +77,7 @@ class Board extends Component {
             onChange={this.update}
             onRemove={this.remove}>
             {note.note}
-            </Note>
+      </Note>
     )
   }
 
@@ -85,8 +85,9 @@ class Board extends Component {
     return (
       <div className="board">
         {this.state.notes.map(this.eachNote)}
-        <button onClick={this.add.bind(null, "New Note")}
-                id="add">
+        <button onClick={this.add.bind(null, "New note...")}
+                id="add"
+                title="Add new note">
             <FaPlus />
         </button>
       </div>

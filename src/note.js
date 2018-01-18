@@ -81,7 +81,7 @@ class Note extends Component {
     return (
       <Draggable>
         {<div className="note" style={this.style}>
-          <p>{this.props.children}</p>
+          <p className="note-text">{this.props.children}</p>
           <span>
             <button onClick={this.edit} id="edit"><FaPencil /></button>
             <button onClick={this.remove} id="remove"><FaTrash /></button>
