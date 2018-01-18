@@ -18,6 +18,14 @@ class Board extends Component {
         {
           id: 2,
           note: "Please, play around!"
+        },
+        {
+          id: 3,
+          note: "Try dragging the post-it's!"
+        },
+        {
+          id: 4,
+          note: "Have a great day!"
         }
       ]
     }
@@ -85,6 +93,7 @@ class Board extends Component {
     return (
       <div className="board">
         {this.state.notes.map(this.eachNote)}
+        <h1 className="title">ReactJS BillBoard App</h1>
         <button onClick={this.add.bind(null, "New note...")}
                 id="add"
                 title="Add new note">

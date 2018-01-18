@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
 
 body,
 html,
@@ -27,6 +28,16 @@ div.board {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eab92d', endColorstr='#c79810', GradientType=1);
 }
 
+div.board h1.title {
+  text-align: center;
+  font-family: "Raleway";
+  margin-top: 30px;
+  font-size: 54px;
+  letter-spacing: 0.05em;
+  color: #118AB7;
+  text-shadow: 2px 1px 3px #000000;
+}
+
 div.note {
   height: 150px;
   width: 150px;
@@ -43,7 +54,7 @@ div.note:active {
 }
 
 div.note p.note-text {
-  font-size: 22px;
+  font-size: 20px;
   padding: 10px;
   margin: 0;
   font-family: "Shadows Into Light", Arial;
@@ -68,8 +79,9 @@ div.note button {
 div.note textarea {
   font-size: 16px;
   margin: 4px;
+  padding: 4px 4px 0;
   height: 100px;
-  width: 136px;
+  width: 132px;
   background: rgba(255, 255, 255, .5);
 }
 
