@@ -21,7 +21,7 @@ class Board extends Component {
         },
         {
           id: 3,
-          note: "Try dragging the post-it's!"
+          note: "Try dragging the post-its!"
         },
         {
           id: 4,
