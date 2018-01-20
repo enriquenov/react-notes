@@ -7,26 +7,26 @@ class Board extends Component {
     super(props)
     this.state = {
       notes: [
-        {
-          id: 0,
-          note: "Oh, hello there!"
-        },
-        {
-          id: 1,
-          note: "Thanks for visiting :)"
-        },
-        {
-          id: 2,
-          note: "Please, play around!"
-        },
-        {
-          id: 3,
-          note: "Try dragging the post-its!"
-        },
-        {
-          id: 4,
-          note: "Have a great day!"
-        }
+        // {
+        //   id: 0,
+        //   note: "Oh, hello there!"
+        // },
+        // {
+        //   id: 1,
+        //   note: "Thanks for visiting :)"
+        // },
+        // {
+        //   id: 2,
+        //   note: "Please, play around!"
+        // },
+        // {
+        //   id: 3,
+        //   note: "Try dragging the post-its!"
+        // },
+        // {
+        //   id: 4,
+        //   note: "Have a great day!"
+        // }
       ]
     }
     this.add = this.add.bind(this)
@@ -36,16 +36,16 @@ class Board extends Component {
     this.remove = this.remove.bind(this)
   }
 
-  // componentWillMount() {
-  //   var self = this
-  //   if (this.props.count) {
-  //     fetch(`https://baconipsum.com/api/?type=all-meat&sentences=${this.props.count}`)
-  //     .then(response => response.json())
-  //     .then(json => json[0]
-  //       .split('. ')
-  //       .forEach(sentence => self.add(sentence.substring(0, 25))))
-  //   }
-  // }
+  componentWillMount() {
+    var self = this
+    if (this.props.count) {
+      fetch(`https://baconipsum.com/api/?type=all-meat&sentences=${this.props.count}`)
+      .then(response => response.json())
+      .then(json => json[0]
+        .split('. ')
+        .forEach(sentence => self.add(sentence.substring(0, 25))))
+    }
+  }
 
   add(text) {
     this.setState(prevState => ({
